@@ -26,9 +26,9 @@ pipeline {
 
 		stage('Build App Image') {
             steps {
-				sh 'docker build -t 20.101.140.41:5000/repository/spring-repo .'
-				sh 'docker tag 20.101.140.41:5000/repository/spring-repo 20.101.140.41:5000/repository/spring-repo:$BUILD_NUMBER'
-			//	sh 'docker tag $BUILD_NUMBER 20.101.140.41:5000/repository/spring-repo'
+				sh 'docker build -t 10.0.0.4:5000/repository/spring-repo .'
+				sh 'docker tag 10.0.0.4:5000/repository/spring-repo 10.0.0.4:5000/repository/spring-repo:$BUILD_NUMBER'
+			//	sh 'docker tag $BUILD_NUMBER 10.0.0.4:5000/repository/spring-repo'
 
 
 			}
@@ -41,16 +41,16 @@ pipeline {
         
         stage('Push Image to Nexus Registry ') {
             steps {
-                sh 'docker push 20.101.140.41:5000/repository/spring-repo:$BUILD_NUMBER'
-				sh 'docker push 20.101.140.41:5000/repository/spring-repo:latest'
+                sh 'docker push 10.0.0.4:5000/repository/spring-repo:$BUILD_NUMBER'
+				sh 'docker push 10.0.0.4:5000/repository/spring-repo:latest'
 
 			}
         }
         
         stage('Remove Unused docker image') {
           steps{
-            sh 'docker rmi 20.101.140.41:5000/repository/spring-repo:$BUILD_NUMBER'
-            sh 'docker rmi 20.101.140.41:5000/repository/spring-repo:latest'
+            sh 'docker rmi 10.0.0.4:5000/repository/spring-repo:$BUILD_NUMBER'
+            sh 'docker rmi 10.0.0.4:5000/repository/spring-repo:latest'
           }
         }
         
