@@ -1,7 +1,3 @@
-azure:
-  keyvault:
-    uri: {$KEYVAULT_URL}
-    client-id: {$AZURE_CLIENT_ID}
 spring:
   cloud:
     azure:
