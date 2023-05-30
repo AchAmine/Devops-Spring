@@ -49,6 +49,13 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
+		
+		<dependency>
+    			<groupId>com.microsoft.azure</groupId>
+    			<artifactId>azure-keyvault-extensions</artifactId>
+    			<version>1.2.6</version>
+		</dependency>
 	</dependencies>
 
 	<build>
