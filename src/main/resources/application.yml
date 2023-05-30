@@ -3,6 +3,11 @@ azure:
     uri: {$KEYVAULT_URL}
     client-id: {$AZURE_CLIENT_ID}
 spring:
+  cloud:
+    azure:
+      keyvault:
+        secret:
+          endpoint: https://myapp-keyvault.vault.azure.net/ 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${DB_HOST}/${DB_NAME}?useSSL=false
