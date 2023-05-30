@@ -52,8 +52,9 @@
 		
 		
 		<dependency>
-		  <groupId>com.azure.spring</groupId>
-		  <artifactId>spring-cloud-azure-starter-keyvault</artifactId>
+		   <groupId>com.azure.spring</groupId>
+		   <artifactId>spring-cloud-azure-starter-keyvault-secrets</artifactId>
+		   <version>5.0.0</version>
 		</dependency>
 		
 	</dependencies>
