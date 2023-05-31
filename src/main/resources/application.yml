@@ -13,8 +13,3 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create
-  cloud:
-    azure:
-      managed-identity:
-        client-id: ${AZURE_CLIENT_ID}
-        tenant-id: ${AZURE_TENANT_ID}
