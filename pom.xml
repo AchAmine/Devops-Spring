@@ -68,6 +68,18 @@
 		  <artifactId>spring-cloud-azure-starter-jdbc-mysql</artifactId>
 		</dependency>
 		
+		
+		<dependency>
+		   <groupId>com.microsoft.azure</groupId>
+		   <artifactId>msal4j</artifactId>
+		   <version>1.11.2</version>
+		</dependency>
+		<dependency>
+		   <groupId>com.azure</groupId>
+		   <artifactId>azure-identity</artifactId>
+		   <version>1.4.5</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
