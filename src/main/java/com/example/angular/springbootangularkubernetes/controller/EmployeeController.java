@@ -21,7 +21,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
     
-    @Value("${db-pass}")
+    @Value("${spring.datasource.password}")
     private String pass;
 
     @PostMapping("/employees")
