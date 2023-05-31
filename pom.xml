@@ -65,8 +65,8 @@
 		</dependency>
 		
 		<dependency>
-		    <groupId>com.azure.spring</groupId>
-		    <artifactId>spring-cloud-azure-starter-keyvault</artifactId>
+		  <groupId>com.azure.spring</groupId>
+		  <artifactId>spring-cloud-azure-starter-jdbc-mysql</artifactId>
 		</dependency>
 		
 	</dependencies>
