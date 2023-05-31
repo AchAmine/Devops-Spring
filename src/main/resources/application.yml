@@ -2,8 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://myspring-app-sqldb.mysql.database.azure.com:3306/test?serverTimezone=UTC
     username: ${DB_USERNAME}
-    azure:
-      passwordless-enabled: true
+    password: admin@123
     hikari:
       initialization-fail-timeout: 0
   jpa:
