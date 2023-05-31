@@ -37,13 +37,13 @@ public class EmployeeController {
     }
     
     @GetMapping("/employees/test")
-    public string getAllEmployees2() {
+    public String getAllEmployees2() {
         log.info("DATABASE PASSWORD : "+this.pass);
         return this.pass;
     }
     
     @GetMapping("/employees/test3")
-    public string getAllEmployees3() {
+    public String getAllEmployees3() {
         log.info("DATABASE PASSWORD2 : "+pass);
         return pass;
     }
