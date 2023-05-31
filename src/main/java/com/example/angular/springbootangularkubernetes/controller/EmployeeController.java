@@ -10,14 +10,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
 
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api")
+@Slf4j
 public class EmployeeController {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+    
+    @Value("${db-pass}")
+    private String pass;
 
     @PostMapping("/employees")
     public Employee addEmployee(@RequestBody Employee employee) {
@@ -27,7 +32,7 @@ public class EmployeeController {
 
     @GetMapping("/employees")
     public ResponseEntity<List<Employee>> getAllEmployees() {
-
+        log.info("DATABASE PASSWORD : "+pass);
         return ResponseEntity.ok(employeeRepository.findAll());
     }
 
