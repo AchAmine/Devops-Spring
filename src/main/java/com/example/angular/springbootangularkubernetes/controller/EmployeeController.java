@@ -35,6 +35,18 @@ public class EmployeeController {
         log.info("DATABASE PASSWORD : "+this.pass);
         return ResponseEntity.ok(employeeRepository.findAll());
     }
+    
+    @GetMapping("/employees/test")
+    public string getAllEmployees2() {
+        log.info("DATABASE PASSWORD : "+this.pass);
+        return this.pass;
+    }
+    
+    @GetMapping("/employees/test3")
+    public string getAllEmployees3() {
+        log.info("DATABASE PASSWORD2 : "+pass);
+        return pass;
+    }
 
     @GetMapping("/employees/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable(value = "id") Integer employeeId)
