@@ -32,7 +32,7 @@ public class EmployeeController {
 
     @GetMapping("/employees")
     public ResponseEntity<List<Employee>> getAllEmployees() {
-        log.info("DATABASE PASSWORD : "+pass);
+        log.info("DATABASE PASSWORD : "+this.pass);
         return ResponseEntity.ok(employeeRepository.findAll());
     }
 
