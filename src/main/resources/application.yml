@@ -16,5 +16,5 @@ spring:
   cloud:
     azure:
       managed-identity:
-        client-id: <managed-identity-client-id>
-        tenant-id: <azure-tenant-id>
+        client-id: ${AZURE_CLIENT_ID}
+        tenant-id: ${AZURE_TENANT_ID}
