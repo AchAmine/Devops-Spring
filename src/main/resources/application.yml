@@ -3,8 +3,6 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://myspring-app-sqldb.mysql.database.azure.com:3306/test?serverTimezone=UTC
     username: ${DB_USERNAME}
-    azure:
-      passwordless-enabled: true
     hikari:
       initialization-fail-timeout: 0
   jpa:
