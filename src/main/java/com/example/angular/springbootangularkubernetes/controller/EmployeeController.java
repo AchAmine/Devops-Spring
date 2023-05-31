@@ -21,8 +21,8 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
     
-    @Value("${spring.datasource.password}")
-    private String pass;
+ //   @Value("${spring.datasource.password}")
+   // private String pass;
 
     @PostMapping("/employees")
     public Employee addEmployee(@RequestBody Employee employee) {
@@ -32,11 +32,11 @@ public class EmployeeController {
 
     @GetMapping("/employees")
     public ResponseEntity<List<Employee>> getAllEmployees() {
-        log.info("DATABASE PASSWORD : "+this.pass);
+  //      log.info("DATABASE PASSWORD : "+this.pass);
         return ResponseEntity.ok(employeeRepository.findAll());
     }
     
-    @GetMapping("/employees/test")
+/*    @GetMapping("/employees/test")
     public String getAllEmployees2() {
         log.info("DATABASE PASSWORD : "+this.pass);
         return this.pass;
@@ -46,7 +46,7 @@ public class EmployeeController {
     public String getAllEmployees3() {
         log.info("DATABASE PASSWORD2 : "+pass);
         return pass;
-    }
+    }*/
 
     @GetMapping("/employees/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable(value = "id") Integer employeeId)
