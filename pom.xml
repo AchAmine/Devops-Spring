@@ -69,6 +69,11 @@
 		  <artifactId>spring-cloud-azure-starter-jdbc-mysql</artifactId>
 		</dependency>
 		
+		<dependency>
+		    <groupId>com.azure.spring</groupId>
+		    <artifactId>spring-cloud-azure-starter-keyvault</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
