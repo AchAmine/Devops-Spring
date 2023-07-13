@@ -6,8 +6,11 @@ spring:
       keyvault:
         secret:
           property-sources[0]:
-            name: key-vault-property-source-1
+          - name: key-vault-property-source-1
             endpoint: https://myspring-app-keyvault.vault.azure.net/
+            credential:
+              managed-identity-enabled: true
+              client-id: ${AZURE_CLIENT_ID}
           property-source-enabled: true
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
