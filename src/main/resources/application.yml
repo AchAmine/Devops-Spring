@@ -4,7 +4,7 @@ spring:
       keyvault:
         secret:
           property-sources:
-            - endpoint: https://myapp-keyvault.vault.azure.net/
+            - endpoint: https://myspring-app-keyvault.vault.azure.net/
               credential:
                 managed-identity-enabled: true
                 client-id: {AZURE_CLIENT_ID}
