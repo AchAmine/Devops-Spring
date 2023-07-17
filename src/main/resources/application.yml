@@ -7,7 +7,7 @@ spring:
             - endpoint: https://myspring-app-keyvault.vault.azure.net/
               credential:
                 managed-identity-enabled: true
-                client-id: {AZURE_CLIENT_ID}
+                client-id: 69421ca9-4587-4d00-b760-34c0249761de
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${DB_HOST}/${DB_NAME}?useSSL=false
