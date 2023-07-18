@@ -64,10 +64,10 @@
 			</exclusions>
 		</dependency>
 		
-		<dependency>
+	<!--	<dependency>
 		  <groupId>com.azure.spring</groupId>
 		  <artifactId>spring-cloud-azure-starter-jdbc-mysql</artifactId>
-		</dependency>
+		</dependency> !-->
 		
 		<dependency>
 		    <groupId>com.azure.spring</groupId>
