@@ -1,18 +1,9 @@
 spring:
-  cloud:
-    azure:
-      keyvault:
-        secret:
-          property-sources:
-            - endpoint: https://myspring-app-keyvault.vault.azure.net/
-              credential:
-                managed-identity-enabled: true
-                client-id: ${AZURE_CLIENT_ID}
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${DB_HOST}/${DB_NAME}?useSSL=false
+    url: jdbc:mysql://mysql-pfe.mysql.database.azure.com:3306/test?serverTimezone=UTC
     username: ${DB_USERNAME}
-    password: ${db-password}
+    azure:
+      passwordless-enabled: true
     hikari:
       initialization-fail-timeout: 0
   jpa:
