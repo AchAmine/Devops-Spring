@@ -49,7 +49,6 @@
         <!-- Plugin versions -->
         <jib-maven-plugin.version>3.3.2</jib-maven-plugin.version>
 
-        <gmavenplus-plugin.version>1.8.1</gmavenplus-plugin.version>
 
         <!-- build version override -->
         <build.version>${project.version}</build.version>
