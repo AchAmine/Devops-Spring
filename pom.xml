@@ -180,15 +180,7 @@
                 <skip.unit.tests>true</skip.unit.tests>
             </properties>
 
-            <dependencies>
-                <!-- add db drivers -->
-                <dependency>
-                    <groupId>mysql</groupId>
-                    <artifactId>mysql-connector-java</artifactId>
-                    <scope>${docker.jdbc.mysql}</scope>
-                </dependency>
-
-            </dependencies>
+           
 
             <build>
                 <plugins>
