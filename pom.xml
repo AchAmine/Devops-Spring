@@ -22,7 +22,7 @@
 
 
         <!-- ## docker configuration -->
-        <docker.repo.url>harbor.val.eu</docker.repo.url>
+        <docker.repo.url>10.0.0.4:5000</docker.repo.url>
         <docker.repo.project>experimental</docker.repo.project>
         <docker.image.name>${docker.repo.url}/${docker.repo.project}/${project.artifactId}
         </docker.image.name>
@@ -215,56 +215,7 @@
                     </plugin>
 
                     <!-- generate "docker.default.tag" which typically is project.version -->
-                    <plugin>
-                        <groupId>org.codehaus.gmavenplus</groupId>
-                        <artifactId>gmavenplus-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>set-properties</id>
-                                <phase>initialize</phase>
-                                <goals>
-                                    <goal>execute</goal>
-                                </goals>
-                                <configuration>
-                                    <scripts>
-                                        <script>
-                                            <![CDATA[
-                                                tag = "${project.version}"
-                                                if ("${docker.tag.trim}".equals("true")) {
-                                                    tag = tag.minus("-SNAPSHOT")
-                                                }
-                                                project.properties.setProperty('docker.default.tag', tag)
-                                                println "docker.default.tag: " + project.properties['docker.default.tag']
-
-                                                //check project type
-                                                if ("${project.packaging}".equals("jar")) {
-                                                    project.properties.setProperty('findMainClass.skip', 'true')
-                                                    project.properties.setProperty('docker.distroless.war.tag.skip', 'true')
-                                                    project.properties.setProperty('docker.distroless.war.latest.skip', 'true')
-                                                    println 'jar image setup'
-                                                } else {
-                                                    project.properties.setProperty('docker.distroless.jar.tag.skip', 'true')
-                                                    project.properties.setProperty('docker.distroless.jar.latest.skip', 'true')
-                                                    println 'war image setup'
-                                                }
-
-                                                //Set image creation time
-                                                try {
-                                                gitTime = "${git.commit.time}"
-                                                if (gitTime?.trim()) {
-                                                    project.properties.setProperty('jib.container.creationTime', gitTime)
-                                                }
-                                                println "jib.container.creationTime: " + project.properties['jib.container.creationTime']
-                                                }catch(Exception ex) {
-                                                   println "WARN: Not a git repo";
-                                                }
-                                            ]]>
-                                        </script>
-                                    </scripts>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
+                   
 
                     <!-- building images -->
                     <plugin>
