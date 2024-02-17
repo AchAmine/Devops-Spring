@@ -31,7 +31,7 @@
         <docker.tag.trim>false</docker.tag.trim>
 
         <!-- base image -->
-        <docker.distroless.image>gcr.io/distroless/java11-debian11</docker.distroless.image>
+        <docker.distroless.image>gcr.io/distroless/java11-debian11:debug</docker.distroless.image>
 
         <!-- execution control -->
         <docker.jib.goal>build</docker.jib.goal>
