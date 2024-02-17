@@ -158,7 +158,6 @@
                         <goals>
                             <goal>repackage</goal>
                         </goals>
-                        <phase>post-integration-test</phase>
                         <configuration>
                             <executable>true</executable>
                         </configuration>
