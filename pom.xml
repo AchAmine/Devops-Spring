@@ -125,9 +125,33 @@
 
 
 
-		<plugins>
+	<plugins>
+		<plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-resources-plugin</artifactId>
+	            <executions>
+	                <execution>
+	                    <id>copy-apm-agent</id>
+	                    <phase>generate-resources</phase>
+	                    <goals>
+	                        <goal>copy-resources</goal>
+	                    </goals>
+	                    <configuration>
+	                        <outputDirectory>${project.build.outputDirectory}/apm</outputDirectory>
+	                        <resources>
+	                            <resource>
+	                                <directory>apm</directory>
+	                                <includes>
+	                                    <include>elastic-apm-agent.jar</include>
+	                                </includes>
+	                            </resource>
+	                        </resources>
+	                    </configuration>
+	                </execution>
+	            </executions>
+	        </plugin>
 
-			 <plugin>
+		<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
