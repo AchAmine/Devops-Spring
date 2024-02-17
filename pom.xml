@@ -38,8 +38,7 @@
 
         <!-- image dependencies -->
         <docker.runtime.tomcat>compile</docker.runtime.tomcat>
-        <!-- db drivers -->
-        <docker.jdbc.mysql>compile</docker.jdbc.mysql>
+       
 
 
         <!-- jib preset properties -->
