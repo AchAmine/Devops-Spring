@@ -143,6 +143,7 @@
 	                                <directory>apm</directory>
 	                                <includes>
 	                                    <include>elastic-apm-agent.jar</include>
+					    <include>elasticapm.properties</include>
 	                                </includes>
 	                            </resource>
 	                        </resources>
