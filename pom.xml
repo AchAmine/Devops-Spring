@@ -261,8 +261,8 @@
 
 				<!--	<jvmFlags>
 				      		<jvmFlag>-javaagent:/app/apm/elastic-apm-agent.jar</jvmFlag>
-				    	</jvmFlags>  
-                                    </container> -->
+				    	</jvmFlags>  -->
+                                    </container> 
                                 </configuration>
                             </execution>
 
