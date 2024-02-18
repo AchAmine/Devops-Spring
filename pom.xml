@@ -259,10 +259,10 @@
                                         <workingDirectory>/home/nonroot</workingDirectory>
                                         <extraClasspath>/app/extras/*</extraClasspath>
 
-					<jvmFlags>
+				<!--	<jvmFlags>
 				      		<jvmFlag>-javaagent:/app/apm/elastic-apm-agent.jar</jvmFlag>
 				    	</jvmFlags>  
-                                    </container>
+                                    </container> -->
                                 </configuration>
                             </execution>
 
