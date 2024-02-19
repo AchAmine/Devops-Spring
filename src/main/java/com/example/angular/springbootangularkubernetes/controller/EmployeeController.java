@@ -111,17 +111,17 @@ public class EmployeeController {
     }
 
     @GetMapping("/forb/{id}")
-    public String ForbPage(@PathVariable(value = "id") Integer employeeId) {
+    public String ForbPage(@PathVariable(value = "id") Integer id) {
         try {
-            // Your logic before throwing the exception, if any
-
+            if (id=2) {
             LocalDateTime localDateTime = LocalDateTime.now();
             log.error("This is forbidden page " + localDateTime);
 
             // Throw the forbidden status exception
             throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+            }
         } catch (Exception e) {
-            // Handle any exceptions if needed
+           
             log.error("An error occurred: " + e.getMessage());
             return "Error page"; // You might return an error page or message here
         }
