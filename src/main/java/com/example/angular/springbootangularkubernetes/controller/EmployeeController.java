@@ -110,17 +110,6 @@ public class EmployeeController {
         return "Welcome to warn page";
     }
 
-
-    @GetMapping("/er")
-    public String ErrorPage(){
-        LocalDateTime localDateTime = LocalDateTime.now();
-        log.error("This error page " + localDateTime);
-        throw new ResponseStatusException(HttpStatus.FORBIDDEN); 
-        return "Welcome to error page";
-    }
-
-
-
     @GetMapping("/forb/{id}")
     public String ForbPage(@PathVariable(value = "id") Integer employeeId) {
         try {
