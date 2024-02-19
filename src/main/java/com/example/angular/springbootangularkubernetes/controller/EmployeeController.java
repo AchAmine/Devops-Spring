@@ -113,7 +113,7 @@ public class EmployeeController {
     @GetMapping("/forb/{id}")
     public String ForbPage(@PathVariable(value = "id") Integer id) {
         try {
-            if (id=2) {
+            if (id==2) {
             LocalDateTime localDateTime = LocalDateTime.now();
             log.error("This is forbidden page " + localDateTime);
 
