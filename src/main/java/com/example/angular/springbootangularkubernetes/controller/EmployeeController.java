@@ -112,7 +112,15 @@ public class EmployeeController {
     public String ErrorPage(){
         LocalDateTime localDateTime = LocalDateTime.now();
         log.error("This error page " + localDateTime);
+        throw new ResponseStatusException(HttpStatus.FORBIDDEN); 
         return "Welcome to error page";
+    }
+
+    @GetMapping("/er")
+    public String ForbPage(){
+        LocalDateTime localDateTime = LocalDateTime.now();
+        log.error("This is forbidden page " + localDateTime);
+        throw new ResponseStatusException(HttpStatus.FORBIDDEN); 
     }
 }
 
