@@ -116,7 +116,7 @@ public class EmployeeController {
         return "Welcome to error page";
     }
 
-    @GetMapping("/er")
+    @GetMapping("/forb")
     public String ForbPage(){
         LocalDateTime localDateTime = LocalDateTime.now();
         log.error("This is forbidden page " + localDateTime);
