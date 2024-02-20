@@ -115,9 +115,9 @@ public class EmployeeController {
     public ResponseEntity<String> forbPage(@PathVariable(value = "id") Integer id) throws ForbiddenException {
         try {
             if (id == 2) {
-                throw new ForbiddenException();
+                throw new ForbiddenException("forbidden exception");
             }
-            return new ResponseEntity<>("Success", HttpStatus.OK);
+         //   return new ResponseEntity<>("Success", HttpStatus.OK);
         } catch (ForbiddenException e) {
             log.error("Forbidden access error: " + e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.FORBIDDEN);
