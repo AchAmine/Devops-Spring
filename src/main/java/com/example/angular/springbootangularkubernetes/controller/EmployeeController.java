@@ -111,20 +111,17 @@ public class EmployeeController {
     }
 
      @GetMapping("/forb/{id}")
-    public ResponseEntity<String> ForbPage(@PathVariable(value = "id") Integer id) {
+    public ResponseEntity<String> forbPage(@PathVariable(value = "id") Integer id) {
         try {
             if (id == 2) {
                 LocalDateTime localDateTime = LocalDateTime.now();
-                log.error("This is forbidden page " + localDateTime);
-
-                return new ResponseEntity<>("Forbidden page", HttpStatus.FORBIDDEN);
+                log.error("Access to forbidden page with ID {} at {}.", id, localDateTime);
+                return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             }
-
             return new ResponseEntity<>("Success", HttpStatus.OK);
         } catch (Exception e) {
             log.error("An error occurred: " + e.getMessage());
-            
-            return new ResponseEntity<>("Error page", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
