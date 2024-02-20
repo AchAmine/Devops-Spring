@@ -132,7 +132,7 @@ public class EmployeeController {
     public ResponseEntity<Employee> forbEmployeeId(@PathVariable(value = "id") Integer employeeId)
             throws ForbiddenException {
         Employee employee = employeeRepository.findById(employeeId)
-                .orElseThrow(() -> new ForbiddenException("Employee not found for this id")
+                .orElseThrow(() -> new ForbiddenException("Employee not found for this id"));
         return ResponseEntity.ok().body(employee);
     }
 
