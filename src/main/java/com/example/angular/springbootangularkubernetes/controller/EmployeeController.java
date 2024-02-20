@@ -1,6 +1,7 @@
 package com.example.angular.springbootangularkubernetes.controller;
 
 import com.example.angular.springbootangularkubernetes.ResourceNotFoundException;
+import com.example.angular.springbootangularkubernetes.ResourceForbiddenException;
 import com.example.angular.springbootangularkubernetes.model.Employee;
 import com.example.angular.springbootangularkubernetes.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -111,7 +112,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/forb/{id}")
-    public ResponseEntity<String> forbPage(@PathVariable(value = "id") Integer id) {
+    public ResponseEntity<String> forbPage(@PathVariable(value = "id") Integer id) throws ForbiddenException {
         try {
             if (id == 2) {
                 throw new ForbiddenException("Access is forbidden for this resource");
@@ -127,24 +128,5 @@ public class EmployeeController {
     }
 
 
-
-    @GetMapping("/combined/{id}")
-    public ResponseEntity<String> combinedPage(@PathVariable(value = "id") Integer id) {
-        try {
-            if (id == 2) {
-                throw new ForbiddenException("Access is forbidden for this resource");
-            }
-            if (id == 3) {
-                throw new ResourceNotFoundException("Resource not found");
-            }
-            return new ResponseEntity<>("Success", HttpStatus.OK);
-        } catch (CustomHttpException e) {
-            log.error("Custom HTTP exception occurred: " + e.getMessage());
-            return new ResponseEntity<>(e.getMessage(), e.getHttpStatus());
-        } catch (Exception e) {
-            log.error("An error occurred: " + e.getMessage());
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 }
 
