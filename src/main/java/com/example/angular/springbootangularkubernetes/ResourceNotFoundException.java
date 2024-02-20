@@ -3,18 +3,31 @@ package com.example.angular.springbootangularkubernetes;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(value = HttpStatus.NOT_FOUND)
-public class ResourceNotFoundException extends RuntimeException {
+public interface CustomHttpException {
+    String getMessage();
+    HttpStatus getHttpStatus();
+}
+
+public class ResourceNotFoundException extends RuntimeException implements CustomHttpException {
 
     public ResourceNotFoundException(String message) {
         super(message);
     }
+
+    @Override
+    public HttpStatus getHttpStatus() {
+        return HttpStatus.NOT_FOUND;
+    }
 }
 
-@ResponseStatus(value = HttpStatus.FORBIDDEN)
-public class ForbiddenException extends RuntimeException {
+public class ForbiddenException extends RuntimeException implements CustomHttpException {
 
     public ForbiddenException(String message) {
         super(message);
+    }
+
+    @Override
+    public HttpStatus getHttpStatus() {
+        return HttpStatus.FORBIDDEN;
     }
 }
