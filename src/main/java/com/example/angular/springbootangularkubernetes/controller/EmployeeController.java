@@ -1,7 +1,7 @@
 package com.example.angular.springbootangularkubernetes.controller;
 
 import com.example.angular.springbootangularkubernetes.ResourceNotFoundException;
-import com.example.angular.springbootangularkubernetes.ResourceForbiddenException;
+import com.example.angular.springbootangularkubernetes.ForbiddenException;
 import com.example.angular.springbootangularkubernetes.model.Employee;
 import com.example.angular.springbootangularkubernetes.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
