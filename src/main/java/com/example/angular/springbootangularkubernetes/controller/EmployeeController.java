@@ -113,18 +113,18 @@ public class EmployeeController {
 
     @GetMapping("/forb/{id}")
     public ResponseEntity<String> forbPage(@PathVariable(value = "id") Integer id) throws ForbiddenException {
-        try {
+   //     try {
             if (id == 2) {
                 throw new ForbiddenException("forbidden exception");
             }
-         //   return new ResponseEntity<>("Success", HttpStatus.OK);
-        } catch (ForbiddenException e) {
+          return new ResponseEntity<>("Success", HttpStatus.OK);
+  /*      } catch (ForbiddenException e) {
             log.error("Forbidden access error: " + e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.FORBIDDEN);
         } catch (Exception e) {
             log.error("An error occurred: " + e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        } */
     }
 
 
