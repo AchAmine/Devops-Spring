@@ -1,6 +1,6 @@
 package com.example.angular.springbootangularkubernetes.controller;
 
-import com.example.angular.springbootangularkubernetes.ResourceNotFoundException;
+//import com.example.angular.springbootangularkubernetes.ResourceNotFoundException;
 import com.example.angular.springbootangularkubernetes.model.Employee;
 import com.example.angular.springbootangularkubernetes.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +52,7 @@ public class EmployeeController {
         return pass;
     }*/
 
-    @GetMapping("/employees/{id}")
+  /*  @GetMapping("/employees/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable(value = "id") Integer employeeId)
             throws ResourceNotFoundException {
         Employee employee = employeeRepository.findById(employeeId)
@@ -85,7 +85,7 @@ public class EmployeeController {
         Map<String, Boolean> response = new HashMap<>();
         response.put("deleted", Boolean.TRUE);
         return response;
-    }
+    } */
 
 
 
