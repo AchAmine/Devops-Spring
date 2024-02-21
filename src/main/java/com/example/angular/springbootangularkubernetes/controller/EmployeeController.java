@@ -2,6 +2,7 @@ package com.example.angular.springbootangularkubernetes.controller;
 
 import com.example.angular.springbootangularkubernetes.ResourceNotFoundException;
 import com.example.angular.springbootangularkubernetes.ForbiddenException;
+import com.example.angular.springbootangularkubernetes.TokenException;
 import com.example.angular.springbootangularkubernetes.model.Employee;
 import com.example.angular.springbootangularkubernetes.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import java.time.LocalDateTime;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
+
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -136,6 +138,15 @@ public class EmployeeController {
         return ResponseEntity.ok().body(employee);
     }
 
+    @GetMapping("/exception/test")
+    public void testException() throws TokenException {
+        try {
+            int result = 10 / 0;
+            log.info("Result: " + result);
+        } catch (ArithmeticException cause) {
+            throw new TokenException("Error performing a calculation", cause);
+        }
+    }
 
 }
 
