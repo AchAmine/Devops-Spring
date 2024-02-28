@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: myspringboot-app
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${DB_HOST}/${DB_NAME}?useSSL=false
@@ -12,3 +14,9 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create
+
+elk:
+    enable: true
+    logstash:
+        server: 10.0.0.4
+        port: 5000
