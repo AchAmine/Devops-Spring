@@ -68,10 +68,10 @@
 	<dependencies>
 
 		        <dependency>
-		            <groupId>net.logstash.logback</groupId>
-		            <artifactId>logstash-logback-encoder</artifactId>
-		            <version>4.11</version>
-		        </dependency>
+			    <groupId>net.logstash.logback</groupId>
+			    <artifactId>logstash-logback-encoder</artifactId>
+			    <version>6.3</version>
+			</dependency>
 
 			<dependency>
 			    <groupId>org.codehaus.janino</groupId>
