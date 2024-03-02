@@ -29,7 +29,7 @@
                 <port>${logstash-port}</port>
                 <!-- encoder is required -->
                 <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-                    <customFields>{"applicationName":"${applicationName}","env":"${env}"}</customFields>
+                    <customFields>{"applicationName":"${applicationName}"}</customFields>
                 </encoder>
             </appender>
         </then>
