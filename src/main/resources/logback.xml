@@ -13,6 +13,7 @@
     <property name="CONSOLE_LOG_PATTERN"
               value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr([${applicationName:-}]){yellow} %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
 
+
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>${CONSOLE_LOG_PATTERN}</pattern>
@@ -20,25 +21,23 @@
         </encoder>
     </appender>
 
-    <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-        <param name="Encoding" value="UTF-8"/>
-        <remoteHost>${logstash-host}</remoteHost>
-        <port>${logstash-port}</port>
-        <!-- encoder is required -->
-        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-            <customFields>{"applicationName":"${applicationName}","env":"${env}"}</customFields>
-        </encoder>
-    </appender>
-
     <if condition='property("elkEnabled").contains("true")'>
         <then>
-            <root level="INFO">
-                <appender-ref ref="logstash"/>
-            </root>
+            <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+                <param name="Encoding" value="UTF-8"/>
+                <remoteHost>${logstash-host}</remoteHost>
+                <port>${logstash-port}</port>
+                <!-- encoder is required -->
+                <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+                    <customFields>{"applicationName":"${applicationName}","env":"${env}"}</customFields>
+                </encoder>
+            </appender>
         </then>
     </if>
 
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="logstash"/>
     </root>
+
 </configuration>
