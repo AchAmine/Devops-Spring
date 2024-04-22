@@ -22,7 +22,7 @@
 
 
         <!-- ## docker configuration -->
-        <docker.repo.url>10.0.0.4:5001</docker.repo.url>
+        <docker.repo.url>10.1.0.4:5000</docker.repo.url>
         <docker.repo.project>experimental</docker.repo.project>
         <docker.image.name>${docker.repo.url}/${docker.repo.project}/${project.artifactId}
         </docker.image.name>
